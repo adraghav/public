@@ -66,14 +66,12 @@ function Invoke-Cloakify {
 
     try {
         if ($outputFilePath) {
-            Write-Host $outputFilePath
             # Write to output file
             $output = foreach ($char in $payloadB64.ToCharArray()) {
                 if ($char -ne "`n") {
                     $cipherArray[$array64.IndexOf($char)]
                 }
             }
-            Write-Host $output
             $output | Out-File -FilePath $outputFilePath -Encoding utf8
         }
         else {
