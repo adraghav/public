@@ -78,7 +78,7 @@ function Invoke-Cloakify {
             # Write to console
             foreach ($char in $payloadB64.ToCharArray()) {
                 if ($char -ne "`n") {
-                    Write-Output $cipherArray[$array64.IndexOf($char)]
+                    Write-Host $cipherArray[$array64.IndexOf($char)]
                 }
             }
         }
